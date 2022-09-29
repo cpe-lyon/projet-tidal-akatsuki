@@ -1,7 +1,36 @@
-body{
+body {
     background-color: #e9e9e9;
 }
 
-nav li{
+nav li {
     text-decoration: none;
+}
+
+.imageContainer {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+.connection {
+    text-align: center;
+}
+
+.card {
+    width: auto;
+    margin: 100px;
+    background-color: white;
+    box-shadow: 0px 5px 20px #999;
+    padding: 50px;
+}
+
+.textImageCentered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 500%;
+    text-shadow: 3px 3px 3px black;
+    opacity: 1;
 }
