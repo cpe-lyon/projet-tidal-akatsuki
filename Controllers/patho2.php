@@ -26,11 +26,11 @@
         <link rel="stylesheet" href="index.css">
     </head>
 
-    <body>
+    <body onload="afficher()">
     
             
         <form method="GET" action="patho2.php">
-             <SELECT name="input" id="input" onclick="afficher()">
+             <SELECT name="input" id="input">
                 <option value="" selected>Choisir un critère</option>
                 <option value="affichertype">type</option>
                 <option value="affichermeridien">meridien</option>
