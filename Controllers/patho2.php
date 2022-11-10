@@ -14,16 +14,16 @@
         die('Erreur : '.$e->getMessage());     // En cas d'erreur, on affiche un message et on arrête tout 
     }
 
-    $reponsename = $bdd->query('SELECT distinct "type" from patho');
+    $reponsename = $bdd->prepare('SELECT distinct "type" from patho');
     $reponsename->execute();
-    $reponsemeri = $bdd->query('SELECT distinct nom from meridien');
+    $reponsemeri = $bdd->prepare('SELECT distinct nom from meridien');
     $reponsemeri->execute();
 ?>
 
 <html lang="fr">
     <head>
         <title>Website</title>
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="../Vues/path.css">
     </head>
 
     <body onload="afficher()">
@@ -71,7 +71,7 @@
 
         
         <?php
-        if(isset($_GET['input'])AND !empty($_GET['input']) )
+        if(isset($_GET['input'])AND !empty($_GET['input']))
         {
             $input = htmlspecialchars($_GET['input']);
             if($input=="affichertype"){
