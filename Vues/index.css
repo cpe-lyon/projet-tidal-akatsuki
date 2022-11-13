@@ -6,6 +6,10 @@ nav li {
     text-decoration: none;
 }
 
+.title {
+    text-align: center
+}
+
 .imageContainer {
     position: relative;
     text-align: center;
@@ -13,6 +17,10 @@ nav li {
 }
 
 .connection {
+    text-align: center;
+}
+
+.inscription {
     text-align: center;
 }
 
