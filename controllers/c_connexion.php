@@ -16,7 +16,7 @@
     $reponse->execute();
 ?>
 
-<form action="connexion.php" method="POST">
+<form action="c_connexion.php" method="POST">
   <label for="login-email">Adresse e-mail</label>
   <input type="email" id="email" name="email" />
   <br />
@@ -53,7 +53,7 @@ if(isset($_POST['email']) AND !empty($_POST['email']) AND isset($_POST['password
         //$retourmdpbdd = $mdpbdd->fetch();
         session_start();
         $_SESSION['email'] = $_POST['email'];
-        header('Location: keywords.php');
+        header('Location: c_keywords.php');
         exit();
             
     }

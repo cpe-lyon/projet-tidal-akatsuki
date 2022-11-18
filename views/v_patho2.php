@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="../views/index.html">Accueil<span class="sr-only">Recherche</span></a>
+                <a class="nav-link" href="../index.php">Accueil<span class="sr-only">Recherche</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="../controllers/c_patho.php">Recherche Pathologie<span class="sr-only">Recherche</span></a>
@@ -22,8 +22,14 @@
             <li class="nav-item active">
                 <a class="nav-link" href="../controllers/c_patho2.php">Filtre Pathologie<span class="sr-only">Recherche</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="../controllers/c_keywords.php">Recherche par mot-clef</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">A propos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="c_deconnexion.php">Déconexion</a>
             </li>
         </ul>
     </div>

@@ -2,13 +2,13 @@
 
 <head>
   <title>Page d'inscription</title>
-  <link rel="stylesheet" href="../Vues/index.css">
+  <link rel="stylesheet" href="../views/index.css">
 </head>
 
 <body>
   <h1 class="title">Inscription</h1>
   <div class="card">
-    <form method="post" action="inscription.php">
+    <form method="post" action="c_inscription.php">
       Prenom : <input type="text" name="prenom" placeholder="Entrez votre prenom" /><br />
       Nom : <input type="text" name="nom" placeholder="Entrez votre nom" /><br />
       Email : <input type="email" name="email" placeholder="Entrer votre Email" /><br />

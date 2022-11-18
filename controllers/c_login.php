@@ -15,14 +15,14 @@ try {
 
 <head>
     <title>Connexion</title>
-    <link rel="stylesheet" href="../Vues/index.css">
+    <link rel="stylesheet" href="../assets/index.css">
 </head>
 
 <body class="log">
     <h1 class="title"> Connexion </h1>
     <div class="card">
 
-        <form form method="GET" action="login.php">
+        <form form method="GET" action="c_login.php">
             <div>
                 <label for="login">Identifiant : </label>
                 <input id="user" name="user" value="" required>
@@ -34,7 +34,7 @@ try {
 
             <input type="button" id="boutonConnexion" value="valider">
         </form>
-        <p><a href="../Controllers/inscription.php">Vous n'avez pas encore de compte ? Créez-en un !</a></p>
+        <p><a href="../controllers/c_inscription.php">Vous n'avez pas encore de compte ? Créez-en un !</a></p>
     </div>
     <?php
     if ((isset($_GET['user']) and !empty($_GET['user'])) and (isset($_GET['password']) and !empty($_GET['password']))) {
