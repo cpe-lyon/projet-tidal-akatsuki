@@ -1,6 +1,6 @@
 <?php
-require '../model/patho.php';
+require '../models/m_patho.php';
 $patho = new patho;
 $reponse = $patho->getPatho();
 $reponseSelectPatho = $patho->selectPatho();
-require '../Vues/patho.php';
+require '../views/v_patho.php';

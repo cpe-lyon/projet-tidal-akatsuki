@@ -1,34 +1,14 @@
-<script src="script.js"> </script>
-<link rel="stylesheet" href="path.css" />
-<?php
-$servername = 'localhost';
-$username = 'pgtp';
-$password = 'tp';
-
-try {
-    // connection à la base de données 
-    $bdd = new PDO("pgsql:host=$servername;dbname=WEBSITE", $username, $password);
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());     // En cas d'erreur, on affiche un message et on arrête tout 
-}
-
-$reponsename = $bdd->prepare('SELECT distinct "type" from patho');
-$reponsename->execute();
-$reponsemeri = $bdd->prepare('SELECT distinct nom from meridien');
-$reponsemeri->execute();
-?>
-
+<script src="../assets/script.js"> </script>
+<link rel="stylesheet" href="../assets/path.css" />
 <html lang="fr">
 
 <head>
     <title>Website</title>
-    <link rel="stylesheet" href="../Vues/path.css">
+    <link rel="stylesheet" href="../assets/path.css">
 </head>
 
 <body onload="afficher()">
-
-
-    <form method="GET" action="patho2.php">
+    <form method="GET" action="c_patho2.php">
         <SELECT name="input" id="input">
             <option value="" selected>Choisir un critère</option>
             <option value="affichertype">type</option>

@@ -22,8 +22,6 @@ class patho
     }
     function selectPatho()
     {
-
-
         if (isset($_GET['pat']) and !empty($_GET['pat'])) {
             $pat = htmlspecialchars($_GET['pat']);
 

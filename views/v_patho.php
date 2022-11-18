@@ -2,7 +2,7 @@
 
 <head>
     <title>Pathologie</title>
-    <link rel="stylesheet" href="../Vues/index.css">
+    <link rel="stylesheet" href="../assets/index.css">
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -13,13 +13,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="../Vues/index.html">Accueil<span class="sr-only">Recherche</span></a>
+                <a class="nav-link" href="../views/index.html">Accueil<span class="sr-only">Recherche</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="../Controllers/patho.php">Recherche Pathologie<span class="sr-only">Recherche</span></a>
+                <a class="nav-link" href="../controllers/c_patho.php">Recherche Pathologie<span class="sr-only">Recherche</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="../Controllers/patho2.php">Filtre Pathologie<span class="sr-only">Recherche</span></a>
+                <a class="nav-link" href="../controllers/c_patho2.php">Filtre Pathologie<span class="sr-only">Recherche</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">A propos</a>
@@ -32,7 +32,7 @@
 
 <body>
     <div class="card">
-        <form method="GET" action="patho.php">
+        <form method="GET" action="c_patho.php">
             <SELECT name="pat">
                 <?php
                 while ($a = $reponse->fetch()) { ?>
