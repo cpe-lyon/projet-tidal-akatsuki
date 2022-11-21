@@ -1,49 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<?php
 
-<body>
+// Initialisation des paramètres du site
+require_once('./config/configuration.php');
 
-    <head>
-        <title>Akatsuki</title>
-        <link rel="stylesheet" href="../assets/index.css">
-    </head>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Menu</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../index.php">Accueil<span class="sr-only">Recherche</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="../controllers/c_patho.php">Recherche Pathologie<span
-                            class="sr-only">Recherche</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="../controllers/c_patho2.php">Filtre Pathologie<span
-                            class="sr-only">Recherche</span></a>
-                </li>
-                <li class="nav-item active">
-                <a class="nav-link" href="../controllers/c_keywords.php">Recherche par mot-clef</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">A propos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="c_deconnexion.php">Déconexion</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="imageContainer">
-        <img src="../assets/acu.jpeg" />
-        <div class="textImageCentered">Bienvenue sur Akatsuki !</div>
-    </div>
-</body>
+// Début de session
+session_start();
 
-</html>
+// Vérification de la page demandée 
+if (isset($_GET['page'])) {
+  $page = htmlspecialchars($_GET['page']);
+  if (!is_file(PATH_CONTROLLERS . $_GET['page'] . '.php')) {
+    // Page non trouvée
+    $page = '404';
+  }
+} else {
+  // Page d'accueil
+  $page = 'home';
+}
+
+//appel du controller
+require_once(PATH_CONTROLLERS . $page . '.php');

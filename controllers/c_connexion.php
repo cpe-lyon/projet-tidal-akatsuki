@@ -41,7 +41,6 @@ if(isset($_POST['email']) AND !empty($_POST['email']) AND isset($_POST['password
     $mdpbdd->execute([$mail]);
     $retourmdpbdd = $mdpbdd->fetch();
     $verify = password_verify($password, $retourmdpbdd['pwduser']);
-    var_dump($verify);
     if($verify){
         //$existe = $bdd->prepare('SELECT mailuser,pwduser FROM "user" WHERE mailuser LIKE ? AND pwduser LIKE ?');
         //$existe->execute(array($mail,$password));

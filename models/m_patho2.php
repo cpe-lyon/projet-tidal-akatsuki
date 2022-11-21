@@ -1,33 +1,37 @@
 <?php
 
-class patho2{
+class patho2
+{
     private $bdd;
 
-    function getName(){
+    function getName()
+    {
         $servername = 'localhost';
         $username = 'pgtp';
         $password = 'tp';
 
         try {
             // connection à la base de données 
-            $this->$bdd = new PDO("pgsql:host=$servername;dbname=WEBSITE", $username, $password);
+            $this->bdd = new PDO("pgsql:host=$servername;dbname=WEBSITE", $username, $password);
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());     // En cas d'erreur, on affiche un message et on arrête tout 
         }
 
-        $reponsename = $this->$bdd->prepare('SELECT distinct "type" from patho');
+        $reponsename = $this->bdd->prepare('SELECT distinct "type" from patho');
         $reponsename->execute();
 
         return $reponsename;
     }
 
-    function getMeri(){
-        $reponsemeri = $this->$bdd->prepare('SELECT distinct nom from meridien');
+    function getMeri()
+    {
+        $reponsemeri = $this->bdd->prepare('SELECT distinct nom from meridien');
         $reponsemeri->execute();
         return $reponsemeri;
     }
 
-    function getQuery(){
+    function getQuery()
+    {
         if (isset($_GET['input']) and !empty($_GET['input'])) {
             $input = htmlspecialchars($_GET['input']);
             if ($input == "affichertype") {
@@ -63,8 +67,7 @@ class patho2{
             }
         }
 
-        $reponsePatho2 = $this->$bdd->query($sql);
+        $reponsePatho2 = $this->bdd->query($sql);
         return $reponsePatho2;
     }
 }
-?>
