@@ -1,8 +1,8 @@
 <?php
-require '../models/m_patho2.php';
+require_once(PATH_MODELS . $page . '.php');
 $patho2 = new patho2;
 $reponsename = $patho2->getName();
 $reponsemeri = $patho2->getMeri();
 $reponsePatho2 = $patho2->getQuery();
-require '../views/v_patho2.php';
+require_once(PATH_VIEWS . $page . '.php');
 ?>
