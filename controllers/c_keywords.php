@@ -1,6 +1,6 @@
 <?php
-require '../models/m_keywords.php';
+require_once(PATH_MODELS . $page . '.php');
 $keywords = new Keywords;
 $reponse = $keywords->getPatho();
-require '../views/v_keywords.php';
+require_once(PATH_VIEWS . $page . '.php');
 ?>
