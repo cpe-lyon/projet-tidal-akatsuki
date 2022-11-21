@@ -1,44 +1,37 @@
 <?php
 
+include_once(PATH_MODELS . 'model.php');
 class patho2
 {
-    private $bdd;
-
     function getName()
     {
-        $servername = 'localhost';
-        $username = 'pgtp';
-        $password = 'tp';
-
-        try {
-            // connection à la base de données 
-            $this->bdd = new PDO("pgsql:host=$servername;dbname=WEBSITE", $username, $password);
-        } catch (Exception $e) {
-            die('Erreur : ' . $e->getMessage());     // En cas d'erreur, on affiche un message et on arrête tout 
-        }
-
-        $reponsename = $this->bdd->prepare('SELECT distinct "type" from patho');
+        $bdd = getConnection();
+        $reponsename = $bdd->query('SELECT distinct "type" from patho');
         $reponsename->execute();
-
         return $reponsename;
     }
 
     function getMeri()
     {
-        $reponsemeri = $this->bdd->prepare('SELECT distinct nom from meridien');
+        $bdd = getConnection();
+        $reponsemeri = $bdd->query('SELECT distinct nom from meridien');
         $reponsemeri->execute();
         return $reponsemeri;
     }
 
     function getQuery()
     {
-        if (isset($_GET['input']) and !empty($_GET['input'])) {
-            $input = htmlspecialchars($_GET['input']);
+        $bdd = getConnection();
+        $reponsePatho2 = "";
+        $sql = "";
+
+        if (isset($_POST['input']) and !empty($_POST['input'])) {
+            $input = htmlspecialchars($_POST['input']);
             if ($input == "affichertype") {
 
-                if ((isset($_GET['type']) and !empty($_GET['type'])) and (isset($_GET['caract']) and !empty($_GET['caract']))) {
-                    $type = htmlspecialchars($_GET['type']);
-                    $caract = htmlspecialchars($_GET['caract']);
+                if ((isset($_POST['type']) and !empty($_POST['type'])) and (isset($_POST['caract']) and !empty($_POST['caract']))) {
+                    $type = htmlspecialchars($_POST['type']);
+                    $caract = htmlspecialchars($_POST['caract']);
                     if ($caract == "choisir") {
 
                         if ($type == 'm') {
@@ -53,21 +46,21 @@ class patho2
                 }
             } else if ($input == "affichermeridien") {
 
-                if (isset($_GET['meridien']) and !empty($_GET['meridien'])) {
+                if (isset($_POST['meridien']) and !empty($_POST['meridien'])) {
 
-                    $meridien = htmlspecialchars($_GET['meridien']);
+                    $meridien = htmlspecialchars($_POST['meridien']);
                     $sql = 'SELECT pt."desc" FROM patho pt,meridien md WHERE pt.mer=md.code AND md.nom=\'' . $meridien . '\'';
                 }
             } else {
-                if (isset($_GET['caract']) and !empty($_GET['caract'])) {
+                if (isset($_POST['caract']) and !empty($_POST['caract'])) {
 
-                    $caract = htmlspecialchars($_GET['caract']);
+                    $caract = htmlspecialchars($_POST['caract']);
                     $sql = 'SELECT pt."desc" FROM patho pt WHERE pt.desc LIKE \'%' . $caract . '%\'';
                 }
             }
         }
-
-        $reponsePatho2 = $this->bdd->query($sql);
+      
+        $reponsePatho2 = $bdd->query($sql);
         return $reponsePatho2;
     }
 }
