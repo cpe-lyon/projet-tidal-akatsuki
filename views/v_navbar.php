@@ -21,7 +21,7 @@
                 <a class="nav-link" href="#">A propos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php?page=deconnexion">Déconexion</a>
+                <a class="nav-link" href="index.php?page=deconnexion">Déconnexion</a>
             </li>
         </ul>
     </div>
