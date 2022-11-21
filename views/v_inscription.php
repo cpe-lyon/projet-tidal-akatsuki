@@ -1,33 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Inscription</title>
-    <link rel="stylesheet" href="index.css">
-
-</head>
-
-
-<body class="log">
-    <h1 class="inscription"> Inscription </h1>
-    <div class="card">
-
-        <form>
-            <div>
-                <label for="login">Identifiant : </label>
-                <input id="user" value="" required>
-            </div>
-            <div>
-                <label for="password">Mot de passe : </label>
-                <input type="password" id="pass" value="" required>
-            </div>
-
-            <input type="button" id="boutonConnexion" value="valider">
-        </form>
-    </div>
-
-
-</body>
-
-</html>
+<?php require_once(PATH_VIEWS . 'header.php'); ?>
+<h1 class="title">Inscription</h1>
+<div class="card">
+    <form method="post" action="index.php?page=inscription">
+        Prenom : <input type="text" name="prenom" placeholder="Entrez votre prenom" /><br />
+        Nom : <input type="text" name="nom" placeholder="Entrez votre nom" /><br />
+        Email : <input type="email" name="email" placeholder="Entrer votre Email" /><br />
+        Mot de passe : <input type="password" name="mdp" placeholder="Entrez votre mdp" /><br />
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+<?php require_once(PATH_VIEWS . 'footer.php'); ?>
