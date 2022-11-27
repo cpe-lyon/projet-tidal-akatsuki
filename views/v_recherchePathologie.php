@@ -34,11 +34,13 @@ require_once(PATH_VIEWS . 'header.php'); ?>
                 <?php
 
                 if (isset($rows)) {
+                    if (isset($pat)) {
                 ?><strong><?php echo $pat; ?></strong>
-                <?php
+                    <?php } ?>
+                    <?php
                     if (count($rows) > 0) {
                         foreach ($rows as $a) {
-                ?>
+                    ?>
 
                             <ul>
                                 <li>

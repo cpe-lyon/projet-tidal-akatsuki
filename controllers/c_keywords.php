@@ -1,12 +1,14 @@
 <?php
 require_once(PATH_MODELS . $page . '.php');
 $keywords = new keywords;
-session_start();
-    if(!isset($_SESSION['email'])){ // Si l'utilisateur n'est pas connecté
-        header('Location: index.php?page=connexion'); // On l'envoie vers la page de connexion
-        exit();
-    }
+if (!isset($_SESSION['email'])) { // Si l'utilisateur n'est pas connecté
+    header('Location: index.php?page=connexion'); // On l'envoie vers la page de connexion
+    exit();
+}
 
+if (isset($_GET['q']) and !empty($_GET['q'])) {
+    $q = $_GET['q'];
+}
 if (isset($_POST['q']) and !empty($_POST['q'])) {
     $q = $_POST['q'];
 }
