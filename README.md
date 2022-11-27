@@ -6,7 +6,9 @@
 - NINI Rayane
 - TIGHADOUINI Walid
 
-## Connexion à la base de données
+## Information d'installation/d'exécution
+
+### Connexion à la base de donnée :
 Lien : http://localhost:50080/pgadmin4  
 Login : tp@t.p  
 Mot de pase : tptptp
