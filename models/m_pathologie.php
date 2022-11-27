@@ -4,14 +4,11 @@ include_once('m_model.php');
 
 class pathologie
 {
-
     // Propriétés
     public $idp;
     public $nompatho;
     public $symptome = array();
     public $pathos = array();
-
-    
 
     public function lirePatho($param,$bdd)
     {
@@ -39,7 +36,6 @@ class pathologie
             $reponse = $bdd->prepare($sql);
             $reponse->execute(['%' . $param . '%']);
         }
-
 
         while ($a = $reponse->fetch()) {
             $this->idp = $a['idp'];

@@ -1,5 +1,6 @@
 <?php
 require_once(PATH_VIEWS . 'header.php'); ?>
+</br>
 <h1 class="title">Filtre Pathologie</h1>
 <div class="card">
     <form method="POST" action="index.php?page=filtrePathologie">
@@ -9,8 +10,6 @@ require_once(PATH_VIEWS . 'header.php'); ?>
             <option value="affichermeridien">meridien</option>
             <option value="affichercaract">caract</option>
         </SELECT>
-
-
 
         <SELECT name="type" id="type">
             <option value="choisir" selected>choisir le type de pathologie</option>

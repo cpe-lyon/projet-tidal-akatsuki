@@ -4,10 +4,11 @@ $recherchePathologie = new recherchePathologie;
 $elem_page = 10;
 $existe = $recherchePathologie->getAllPatho();
 $requete = "";
+
 if ($existe->fetch()) {
     $elem_total = $existe->rowCOUNT();
 
-
+    // Gestion de la pagination
     if (isset($_GET['pagination']) and !empty($_GET['pagination']) and $_GET['pagination'] > 0) {
         $_GET['pagination'] = intval($_GET['pagination']);
         $pageCourante = $_GET['pagination'];
@@ -19,6 +20,8 @@ if ($existe->fetch()) {
     $page_total = ceil($elem_total / $elem_page);
     $requete = $recherchePathologie->getPatho($depart, $elem_page);
 }
+
+// Si l'utilisateur a entré une pathologie
 if (isset($_POST['pat']) and !empty($_POST['pat'])) {
     $pat = htmlspecialchars($_POST['pat']);
     $rows = $recherchePathologie->selectPatho($pat);

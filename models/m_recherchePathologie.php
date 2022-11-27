@@ -3,6 +3,7 @@
 include_once(PATH_MODELS . 'model.php');
 class recherchePathologie
 {
+    // On recherche tout ce qu'il y a dans la table patho
     function getAllPatho()
     {
         $bdd = getConnection();
@@ -10,6 +11,8 @@ class recherchePathologie
         $existe->execute();
         return $existe;
     }
+
+    // On recherche les pathologies pour les mettre en liste
     function getPatho($depart, $elem_page)
     {
         $bdd = getConnection();
@@ -17,6 +20,8 @@ class recherchePathologie
         $requete->execute([$depart, $elem_page]);
         return $requete;
     }
+
+    // Fonction qui choisit les symptomes de la pathologie selectionnée par l'user
     function selectPatho($pat)
     {
         $bdd = getConnection();

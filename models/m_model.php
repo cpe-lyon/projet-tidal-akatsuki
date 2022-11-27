@@ -1,9 +1,7 @@
 <?php
 
-
 // fonction de connexion à la base de donnée 
 function getConnection()
-
 {
     $servername = 'localhost';
     $username = 'pgtp';

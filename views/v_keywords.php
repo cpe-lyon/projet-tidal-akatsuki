@@ -1,6 +1,6 @@
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 </br>
-<h1 class="title">Recherche de pathologie par mot-clef</h1>
+<h1 class="title">Recherche de pathologie par mot-clé</h1>
 <div class="card">
 
 
@@ -41,8 +41,6 @@
 
     <?php
     if (isset($page_total)) {
-
-
         for ($i = 1; $i <= $page_total; $i++) {
             echo '<a href="index.php?page=keywords&pagination=' . $i . '&q=' . $q . ' "> ' . $i . ' </a>';
         }

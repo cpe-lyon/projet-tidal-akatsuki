@@ -1,8 +1,8 @@
 <?php require_once(PATH_VIEWS . 'header.php'); ?>
 
 <div class="imageContainer">
-    <img src="<?= PATH_ASSETS ?>acu.jpeg" />
-    <div class="textImageCentered">Bienvenue sur Akatsuki !</div>
+    <img src="<?= PATH_ASSETS ?>acu.jpeg"/>
+    <div class="textImageCentered">Bienvenue sur le site d'acupuncture !</div>
 </div>
 
 <?php require_once(PATH_VIEWS . 'footer.php');

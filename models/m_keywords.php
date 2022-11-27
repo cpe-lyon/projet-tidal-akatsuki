@@ -3,7 +3,7 @@
 include_once(PATH_MODELS . 'model.php');
 class Keywords
 {
-
+    // On compte le nombre de lignes pour la pagination
     function countRows($q)
     {
         $bdd = getConnection();
@@ -13,6 +13,7 @@ class Keywords
         return $elem_total;
     }
 
+    // On choisit la pathologie en fonction du nom entré par l'user
     function selectPathoWithName($q, $depart, $elem_page)
     {
         $bdd = getConnection();

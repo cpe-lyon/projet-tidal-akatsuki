@@ -1,3 +1,4 @@
+// Gestion de l'animation sur la page Filtre Pathologie
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
