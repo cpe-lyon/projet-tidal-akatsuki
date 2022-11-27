@@ -30,6 +30,8 @@ require_once(PATH_VIEWS . 'header.php'); ?>
 
 
     if (isset($rows)) {
+       ?><strong><?php echo $pat; ?></strong> 
+       <?php
         if (count($rows) > 0) {
             foreach ($rows as $a) {
     ?>

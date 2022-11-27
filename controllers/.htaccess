@@ -1,0 +1,5 @@
+RewriteEngine On 
+RewriteRule ^type=(.*)$ /controllers/c_lire_patho.php?param=$1 [NC]
+RewriteRule ^meridien=(.*)$ /controllers/c_lire_patho.php?param=$1 [NC]
+RewriteRule ^caracteristique=(.*)$ /controllers/c_lire_patho.php?param=$1 [NC]
+RewriteRule ^symptomede=(.*)$ /controllers/c_lire_patho.php?param=$1 [NC]

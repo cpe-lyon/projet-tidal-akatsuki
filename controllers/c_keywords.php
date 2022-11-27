@@ -1,9 +1,12 @@
 <?php
 require_once(PATH_MODELS . $page . '.php');
 $keywords = new keywords;
-if (isset($_GET['q']) and !empty($_GET['q'])) {
-    $q = $_GET['q'];
-}
+session_start();
+    if(!isset($_SESSION['email'])){
+        header('Location: index.php?page=connexion');
+        exit();
+    }
+
 if (isset($_POST['q']) and !empty($_POST['q'])) {
     $q = $_POST['q'];
 }

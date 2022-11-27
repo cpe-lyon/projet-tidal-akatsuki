@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Connexion</title>
-    <link rel="stylesheet" href="<?= PATH_ASSETS ?>index.css">
-</head>
+<?php require_once(PATH_VIEWS . 'header.php'); ?>
 <h1 class="title">Connexion</h1>
 <div class="card">
     <form action="index.php?page=connexion" method="POST">
@@ -32,3 +25,4 @@
 
     ?>
 </div>
+<?php require_once(PATH_VIEWS . 'footer.php');
