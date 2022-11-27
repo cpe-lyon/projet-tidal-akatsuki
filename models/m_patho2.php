@@ -1,6 +1,7 @@
 <?php
 include_once(PATH_MODELS . 'model.php');
 
+include_once(PATH_MODELS . 'model.php');
 class patho2
 {
     function getMeri()

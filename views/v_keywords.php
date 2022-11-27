@@ -2,6 +2,9 @@
 </br>
 <h1 class="title">Recherche de pathologie par mot-clef</h1>
 <div class="card">
+
+
+
     <form method="POST" action="index.php?page=keywords">
         <input type="search" name="q" placeholder="Recherche..." />
         <input type="submit" value="Valider" />
@@ -13,6 +16,8 @@
         if ($elem_total > 0) {
 
             foreach ($lignes as $a) {
+
+
     ?>
                 <ul>
                     <li>
