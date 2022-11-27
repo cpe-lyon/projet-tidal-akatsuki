@@ -3,7 +3,7 @@ require_once(PATH_VIEWS . 'header.php'); ?>
 </br>
 <h1 class="title">Recherche Pathologie</h1>
 <div class="card">
-    <form method="POST" action="index.php?page=patho">
+    <form method="POST" action="index.php?page=recherchePathologie">
         <div class="row">
             <div class="col-4">
                 <?php

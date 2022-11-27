@@ -12,6 +12,8 @@ if (isset($_POST['email']) and !empty($_POST['email']) and isset($_POST['passwor
         $_SESSION['email'] = $_POST['email'];
         header('Location: index.php?page=keywords');
         exit();
+    } else {
+        $_SESSION['email'] = null;
     }
-} 
+}
 require_once(PATH_VIEWS . $page . '.php');

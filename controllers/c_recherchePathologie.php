@@ -1,8 +1,8 @@
 <?php
 require_once(PATH_MODELS . $page . '.php');
-$patho = new patho;
+$recherchePathologie = new recherchePathologie;
 $elem_page = 10;
-$existe = $patho->getAllPatho();
+$existe = $recherchePathologie->getAllPatho();
 $requete = "";
 if ($existe->fetch()) {
     $elem_total = $existe->rowCOUNT();
@@ -17,11 +17,11 @@ if ($existe->fetch()) {
 
     $depart = ($pageCourante - 1) * $elem_page;
     $page_total = ceil($elem_total / $elem_page);
-    $requete = $patho->getPatho($depart, $elem_page);
+    $requete = $recherchePathologie->getPatho($depart, $elem_page);
 }
 if (isset($_POST['pat']) and !empty($_POST['pat'])) {
     $pat = htmlspecialchars($_POST['pat']);
-    $rows = $patho->selectPatho($pat);
+    $rows = $recherchePathologie->selectPatho($pat);
 } else {
     $rows = array();
 }

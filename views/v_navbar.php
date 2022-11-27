@@ -9,10 +9,10 @@
                 <a class="nav-link" href="index.php">Accueil<span class="sr-only">Recherche</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="index.php?page=patho">Recherche Pathologie<span class="sr-only">Recherche</span></a>
+                <a class="nav-link" href="index.php?page=recherchePathologie">Recherche Pathologie<span class="sr-only">Recherche</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="index.php?page=patho2">Filtre Pathologie<span class="sr-only">Recherche</span></a>
+                <a class="nav-link" href="index.php?page=filtrePathologie">Filtre Pathologie<span class="sr-only">Recherche</span></a>
             </li>
             <?php if ($_SESSION['email'] != null) { ?>
                 <li class="nav-item active">

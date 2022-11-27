@@ -1,7 +1,7 @@
 <?php
 require_once(PATH_MODELS . $page . '.php');
-$patho2 = new patho2;
-$reponsemeri = $patho2->getMeri();
+$filtrePathologie = new filtrePathologie;
+$reponsemeri = $filtrePathologie->getMeri();
 $rows = array();
 if (isset($_POST['input']) and !empty($_POST['input'])) {
     $input = htmlspecialchars($_POST['input']);
@@ -13,12 +13,12 @@ if (isset($_POST['input']) and !empty($_POST['input'])) {
             if ($caract == "choisir") {
 
                 if ($type == 'm') {
-                    $rows = $patho2->getPathoForMeridienType();
+                    $rows = $filtrePathologie->getPathoForMeridienType();
                 } else {
-                    $rows = $patho2->getPathoForSelectType($type);
+                    $rows = $filtrePathologie->getPathoForSelectType($type);
                 }
             } else {
-                $rows = $patho2->getPathoForSelectTypeAndCaract($type, $caract);
+                $rows = $filtrePathologie->getPathoForSelectTypeAndCaract($type, $caract);
             }
         }
     } else if ($input == "affichermeridien") {
@@ -26,13 +26,13 @@ if (isset($_POST['input']) and !empty($_POST['input'])) {
         if (isset($_POST['meridien']) and !empty($_POST['meridien'])) {
 
             $meridien = htmlspecialchars($_POST['meridien']);
-            $rows = $patho2->getMeridien($meridien);
+            $rows = $filtrePathologie->getMeridien($meridien);
         }
     } else {
         if (isset($_POST['caract']) and !empty($_POST['caract'])) {
 
             $caract = htmlspecialchars($_POST['caract']);
-            $rows = $patho2->getPathoForCaract($caract);
+            $rows = $filtrePathologie->getPathoForCaract($caract);
         }
     }
 }

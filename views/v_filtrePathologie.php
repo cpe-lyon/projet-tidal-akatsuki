@@ -1,8 +1,8 @@
-<?php $head = "patho2";
+<?php $head = "filtrePathologie";
 require_once(PATH_VIEWS . 'header.php'); ?>
 <h1 class="title">Filtre Pathologie</h1>
 <div class="card">
-    <form method="POST" action="index.php?page=patho2">
+    <form method="POST" action="index.php?page=filtrePathologie">
         <SELECT name="input" id="input">
             <option value="" selected>Choisir un critère</option>
             <option value="affichertype">type</option>

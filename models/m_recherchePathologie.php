@@ -1,7 +1,7 @@
 <?php
 
 include_once(PATH_MODELS . 'model.php');
-class patho
+class recherchePathologie
 {
     function getAllPatho()
     {
