@@ -14,6 +14,9 @@ Mot de pase : tptptp
 ### Script à lancer dans la BD :
 ```
 ```
+###Informations supplémentaires
+- Le Mod_rewrite doit bien être activer (j'ai utiliser la vidéo youtube ci-dessous pour l'activier)
+- exemple d'utilisation de l'api REST sur notre projet: http://localhost:50080/controllers/meridien=Coeur
 
 ## Changements depuis la pré-évaluation
 - API REST
