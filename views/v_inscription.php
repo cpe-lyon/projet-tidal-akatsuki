@@ -1,4 +1,5 @@
-<?php require_once(PATH_VIEWS . 'header.php'); ?>
+<?php $head = "inscription";
+require_once(PATH_VIEWS . 'header.php'); ?>
 <h1 class="title">Inscription</h1>
 <div class="card">
     <form method="post" action="index.php?page=inscription">

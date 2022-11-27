@@ -3,28 +3,28 @@
 include_once(PATH_MODELS . 'model.php');
 class patho
 {
-
-    function getPatho()
+    function getAllPatho()
     {
         $bdd = getConnection();
-        $reponse = $bdd->query('SELECT * FROM patho');
-        $reponse->execute();
-        return $reponse;
+        $existe = $bdd->prepare('SELECT * FROM patho');
+        $existe->execute();
+        return $existe;
     }
-    function selectPatho()
+    function getPatho($depart, $elem_page)
     {
-
         $bdd = getConnection();
-        $reponseSelectPatho = "";
+        $requete = $bdd->prepare('SELECT * FROM patho ORDER BY "desc" OFFSET ? LIMIT ?');
+        $requete->execute([$depart, $elem_page]);
+        return $requete;
+    }
+    function selectPatho($pat)
+    {
+        $bdd = getConnection();
+        $sql = 'SELECT symptome."desc" as descp FROM symptome,patho,symptPatho WHERE patho."desc"=\'' . $pat . '\'and patho.idP=symptPatho.idP and symptPatho.idS=symptome.idS';
+        $reponse = $bdd->prepare($sql);
+        $reponse->execute();
+        $rows = $reponse->fetchAll();
 
-        if (isset($_POST['pat']) and !empty($_POST['pat'])) {
-            $pat = htmlspecialchars($_POST['pat']);
-
-            $sql = 'SELECT symptome."desc" as descp FROM symptome,patho,symptPatho WHERE patho."desc"=\'' . $pat . '\'and patho.idP=symptPatho.idP and symptPatho.idS=symptome.idS';
-
-
-            $reponseSelectPatho = $bdd->query($sql);
-        }
-        return $reponseSelectPatho;
+        return $rows;
     }
 }

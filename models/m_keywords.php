@@ -1,34 +1,24 @@
+
 <?php
+include_once(PATH_MODELS . 'model.php');
 class Keywords
 {
-    private $bdd;
-    function getPatho(){
-        $servername = 'localhost';
-        $username = 'pgtp';
-        $password = 'tp';
-        
-        try {
-            // connection à la base de données 
-            $this->$bdd = new PDO("pgsql:host=$servername;dbname=WEBSITE", $username, $password); 
-        }
 
-        catch(Exception $e) {
-            die('Erreur : '.$e->getMessage());     // En cas d'erreur, on affiche un message et on arrête tout 
-        }
-
-        $reponse = $this->$bdd->prepare('SELECT * FROM patho');
-        $reponse->execute();
-
-        //session_start();
-        // if(!isset($_SESSION['email'])){
-        //     header('Location: c_connexion.php');
-        //     exit();
-        // }
-
-        return $reponse;
+    function countRows($q)
+    {
+        $bdd = getConnection();
+        $rows = $bdd->prepare('SELECT distinct pt.desc FROM patho pt,symptpatho sp,symptome sy,keySympt ks,keywords kw WHERE kw.name LIKE ? AND kw.idK=ks.idK AND ks.idS=sy.idS AND sy.idS=sp.idS AND sp.idP=pt.idP');
+        $rows->execute([$q]);
+        $elem_total = $rows->rowCOUNT();
+        return $elem_total;
     }
 
-    function sum(){
-        // MVC à faire
+    function selectPathoWithName($q, $depart, $elem_page)
+    {
+        $bdd = getConnection();
+        $requete = $bdd->prepare('SELECT distinct pt.desc FROM patho pt,symptpatho sp,symptome sy,keySympt ks,keywords kw WHERE kw.name LIKE ? AND kw.idK=ks.idK AND ks.idS=sy.idS AND sy.idS=sp.idS AND sp.idP=pt.idP ORDER BY pt.desc OFFSET ? LIMIT ?');
+        $requete->execute([$q, $depart, $elem_page]);
+        $lignes = $requete->fetchAll();
+        return $lignes;
     }
 }

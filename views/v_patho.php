@@ -1,20 +1,37 @@
-<?php require_once(PATH_VIEWS . 'header.php'); ?>
+<?php $head = "patho";
+require_once(PATH_VIEWS . 'header.php'); ?>
 </br>
 <h1 class="title">Recherche Pathologie</h1>
 <div class="card">
     <form method="POST" action="index.php?page=patho">
-        <SELECT name="pat">
-            <?php
-            while ($a = $reponse->fetch()) { ?>
-                <option value="<?php echo $a['desc']; ?>"><?php echo $a['desc']; ?></option>
-            <?php } ?>
-        </SELECT>
-        <input type="submit" />
+        <div class="row">
+            <div class="col-4">
+                <?php
+                if ($requete != "") {
+                    while ($a = $requete->fetch()) { ?>
+                        <div class="list-group" id="list-tab" role="tablist">
+                            <input name="pat" id="pat" type="submit" class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" role="tab" aria-controls="home" value="<?php echo $a['desc']; ?>">
+                        </div>
+                <?php }
+                }
+
+                ?>
+
+
+                <?php for ($i = 1; $i <= $page_total; $i++) {
+                    echo '<a href="index.php?page=patho&pagination=' . $i . ' "> ' . $i . ' </a>';
+                }
+
+                ?>
+            </div>
+        </div>
     </form>
     <?php
-    if ($reponseSelectPatho != "") {
-        while ($a = $reponseSelectPatho->fetch()) {
+
+    if (count($rows) > 0) {
+        foreach ($rows as $a) {
     ?>
+
             <ul>
                 <li>
                     <?php
@@ -22,13 +39,13 @@
                     ?>
                 </li>
             </ul>
-        <?php
+    <?php
         }
     } else {
-        ?>
-        <p>Aucune donnée</p>
-    <?php
+        echo "aucun symptôme n'a été trouvé par la pathologie sélectionner";
     }
+
+
     ?>
 </div>
 <?php require_once(PATH_VIEWS . 'footer.php'); ?>
