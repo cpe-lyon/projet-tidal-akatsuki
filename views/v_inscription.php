@@ -1,5 +1,11 @@
-<?php $head = "inscription";
-require_once(PATH_VIEWS . 'header.php'); ?>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="<?= PATH_ASSETS ?>index.css">
+</head>
 <h1 class="title">Inscription</h1>
 <div class="card">
     <form method="post" action="index.php?page=inscription">
@@ -10,4 +16,3 @@ require_once(PATH_VIEWS . 'header.php'); ?>
         <input type="submit" value="Submit" />
     </form>
 </div>
-<?php require_once(PATH_VIEWS . 'footer.php'); ?>

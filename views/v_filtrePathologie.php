@@ -1,4 +1,4 @@
-<?php $head = "filtrePathologie";
+<?php
 require_once(PATH_VIEWS . 'header.php'); ?>
 <h1 class="title">Filtre Pathologie</h1>
 <div class="card">

@@ -1,4 +1,4 @@
-<?php $head = "patho";
+<?php
 require_once(PATH_VIEWS . 'header.php'); ?>
 </br>
 <h1 class="title">Recherche Pathologie</h1>
