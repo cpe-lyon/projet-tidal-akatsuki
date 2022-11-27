@@ -20,9 +20,7 @@ Lien : http://localhost:50080/pgadmin4
 Login : tp@t.p  
 Mot de pase : tptptp
 
-### Script à lancer dans la BD :
-```
-```
+### Script à lancer dans la VM : script-VM.sql
 
 ## Changements depuis la pré-évaluation
 - API REST
