@@ -22,9 +22,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">A propos</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.php?page=deconnexion">Déconnexion</a>
-            </li>
+            <?php if (isset($_SESSION['email'])) { ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?page=deconnexion">Déconnexion</a>
+                </li>
+            <?php } ?>
+            <?php if (!isset($_SESSION['email'])) { ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?page=connexion">Connexion</a>
+                </li>
+            <?php } ?>
         </ul>
     </div>
 </nav>

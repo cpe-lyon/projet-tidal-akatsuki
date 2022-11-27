@@ -19,7 +19,7 @@ require_once(PATH_VIEWS . 'header.php'); ?>
 
 
                 <?php for ($i = 1; $i <= $page_total; $i++) {
-                    echo '<a href="index.php?page=patho&pagination=' . $i . ' "> ' . $i . ' </a>';
+                    echo '<a href="index.php?page=recherchePathologie&pagination=' . $i . ' "> ' . $i . ' </a>';
                 }
 
                 ?>
