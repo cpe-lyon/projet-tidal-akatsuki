@@ -6,9 +6,16 @@
 - NINI Rayane
 - TIGHADOUINI Walid
 
-## Information d'installation/d'exécution
+## Lancer le site sur un navigateur
 
-### Connexion à la base de donnée :
+Lien : http://localhost:50080/index.php  
+Format des liens du site : http://localhost:50080/index.php?page=...
+
+### Informations supplémentaires
+- Le Mod_rewrite doit bien être activé (j'ai utilisé la vidéo youtube ci-dessous pour l'activer)
+- Exemple d'utilisation de l'API REST sur notre projet: http://localhost:50080/controllers/meridien=Coeur
+
+## Connexion à la base de données
 Lien : http://localhost:50080/pgadmin4  
 Login : tp@t.p  
 Mot de pase : tptptp
@@ -16,20 +23,17 @@ Mot de pase : tptptp
 ### Script à lancer dans la BD :
 ```
 ```
-### Informations supplémentaires :
-- Le Mod_rewrite doit bien être activer (j'ai utiliser la vidéo youtube ci-dessous pour l'activier)
-- exemple d'utilisation de l'api REST sur notre projet: http://localhost:50080/controllers/meridien=Coeur
 
 ## Changements depuis la pré-évaluation
 - API REST
 - Design du site
 - Page de connexion et d'inscription
-- Gestion d'erreur
+- Gestion d'erreurs
 - Modification sur la recherche de pathologies
 - Gestion de la navbar
 
 ## Difficultés rencontrées
-- Grosse difficulté pour mettre en place REST
+- Grosse difficulté pour mettre en place l'API REST
 - Gestion du MVC compliquée
 - Problème de syncronisation avec Git
 
