@@ -6,24 +6,22 @@
     <title>Connexion</title>
     <link rel="stylesheet" href="<?= PATH_ASSETS ?>index.css">
 </head>
+<h1 class="title">Connexion</h1>
 <div class="card">
     <form action="index.php?page=connexion" method="POST">
-        <label for="login-email">Adresse e-mail</label>
-        <input type="email" id="email" name="email" />
+        <label for="email">Adresse e-mail</label>
+        <input type="text" id="email" name="email" required />
         <br />
-        <label for="login-password">Mot de passe</label>
-        <input type="password" id="password" name="password" />
-        <br />
-        <label>
-            <input type="hidden" name="remember" value="0" />
-            <input type="checkbox" name="remember" value="1" />
-            Se souvenir de moi
-        </label>
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" required />
+
         <br />
         <button type="submit">Se connecter</button>
         <br />
         <label>
             <a href="index.php?page=inscription">Pas de compte ? Inscrivez vous</a>
+            </br>
+            <a href="index.php">Connectez vous sans compte</a>
         </label>
     </form>
     <?php

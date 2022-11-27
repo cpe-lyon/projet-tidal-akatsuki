@@ -28,18 +28,21 @@ require_once(PATH_VIEWS . 'header.php'); ?>
     </form>
     <?php
 
-    if (count($rows) > 0) {
-        foreach ($rows as $a) {
+
+    if (isset($rows)) {
+        if (count($rows) > 0) {
+            foreach ($rows as $a) {
     ?>
 
-            <ul>
-                <li>
-                    <?php
-                    echo $a['descp'];
-                    ?>
-                </li>
-            </ul>
+                <ul>
+                    <li>
+                        <?php
+                        echo $a['descp'];
+                        ?>
+                    </li>
+                </ul>
     <?php
+            }
         }
     } else {
         echo "aucun symptôme n'a été trouvé par la pathologie sélectionner";

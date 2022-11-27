@@ -7,7 +7,7 @@
 
     <form method="POST" action="index.php?page=keywords">
         <input type="search" name="q" placeholder="Recherche..." />
-        <input type="submit" value="Valider" />
+        <button type="submit">Valider</button>
     </form>
 
     <?php
@@ -40,10 +40,13 @@
 
 
     <?php
-    for ($i = 1; $i <= $page_total; $i++) {
-        echo '<a href="index.php?page=keywords&pagination=' . $i . '&q=' . $q . ' "> ' . $i . ' </a>';
-    }
+    if (isset($page_total)) {
 
+
+        for ($i = 1; $i <= $page_total; $i++) {
+            echo '<a href="index.php?page=keywords&pagination=' . $i . '&q=' . $q . ' "> ' . $i . ' </a>';
+        }
+    }
     ?>
 
 </div>

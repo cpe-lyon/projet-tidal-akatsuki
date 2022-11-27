@@ -46,11 +46,7 @@ require_once(PATH_VIEWS . 'header.php'); ?>
 
     <?php
 
-
-    if (count($rows) == 0) {
-        echo "Aucune pathologie n'a été trouvé pour les critères définis";
-    } else {
-
+    if (isset($rows)) {
         foreach ($rows as $a) {
     ?>
             <ul>
@@ -62,6 +58,9 @@ require_once(PATH_VIEWS . 'header.php'); ?>
             </ul>
     <?php
         }
+    } else {
+
+        echo "Aucune pathologie n'a été trouvé pour les critères définis";
     }
     ?>
 </div>

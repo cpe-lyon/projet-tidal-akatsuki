@@ -14,7 +14,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index.php?page=filtrePathologie">Filtre Pathologie<span class="sr-only">Recherche</span></a>
             </li>
-            <?php if ($_SESSION['email'] != null) { ?>
+            <?php if (isset($_SESSION['email'])) { ?>
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php?page=keywords">Recherche par mot-clé</a>
                 </li>
